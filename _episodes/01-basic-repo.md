@@ -1,5 +1,5 @@
 ---
-title: "Creating a repositry"
+title: "Creating a local repositry"
 teaching: 10
 exercises: 15
 objectives:
@@ -10,9 +10,7 @@ questions:
 - "How do I add my credentials?"
 - "How do I create a simple repository?"
 keypoints:
-- "Use your `.ssh/gitlab` and `.ssh/gitlab.pub` keys to securely push to CERN"
 - "_Always_ add a `README.md` file to your repositry"
-- "Share your code as appropriate"
 
 
 hidden: false
@@ -162,4 +160,5 @@ to explain the full context of the commit. If you need something more
 verbose, you can use the contents of a text file with
 `git commit -F file.txt`.
 
-
+This all might be review, but next the real fun begins: we'll push
+this repository to gitlab.
