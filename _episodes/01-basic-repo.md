@@ -7,7 +7,6 @@ objectives:
 - "Add your credentials to CERN's Gitlab"
 - "Push your simple readme"
 questions:
-- "How do I add my credentials?"
 - "How do I create a simple repository?"
 keypoints:
 - "_Always_ add a `README.md` file to your repositry"

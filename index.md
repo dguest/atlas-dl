@@ -37,7 +37,7 @@ The aim of this module is to:
 > 2.  Creating a new reposiotry
 > 3.  Forking an existing repository
 > 4.  Adding and working with multiple "remote" forks from your local repository
-> 5.  Contribution eddiquate
+> 5.  Creating merge requests
 > 6.  Submodules, the Athena repository, and how to contribute to both
 {: .checklist}
 

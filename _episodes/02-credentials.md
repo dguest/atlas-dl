@@ -1,20 +1,23 @@
 ---
-title: "Pushing to gitlab"
+title: "Credentials"
 teaching: 10
 exercises: 15
 objectives:
 - "Add your credentials to CERN's Gitlab"
-- "Push your simple readme"
 questions:
 - "How do I add my credentials?"
 keypoints:
-- "Use your `.ssh/gitlab` and `.ssh/gitlab.pub` keys to securely push to CERN"
-- "_Always_ add a `README.md` file to your repositry"
-- "Share your code as appropriate"
+- "Use your `.ssh/gitlab` and `.ssh/gitlab.pub` keys to veryify your identy to CERN"
 
 hidden: false
 ---
 
+> ## **NOTE:** we probably don't need this section
+>
+> This could be replaced by [the gitlab documentation on the same topic][gitlab-keys]
+{: .callout}
+
+[gitlab-keys]: https://gitlab.cern.ch/help/ssh/README
 
 > ## This episode assumes
 >
@@ -62,16 +65,21 @@ But to get back to our lesson: say you want to push some information to
 gitlab. Obviously we want to make sure gitlab knows who you are so
 some stranger isn't pushing to _your_ repository.
 
+While it's an oversimplification, the exchange looks _something_ like
+this:
+
 0. You generate a key pair, and share your public key with gitlab. Again you **never** share your private key with anyone.
 1. Gitlab uses your public key and encrypts a short message, maybe
    something like "I ate 45 donkeys for lunch"
 2. Gitlab sends you the _encrypted_ message.
 3. You decrypt it _with your private key_ and send the unencrypted
    message back.
-4. If gitlab sees the same thing they generated, they let you push
-   your code. If, on the other hand, someone else is _pretending_ to
-   be you, gitlab will see a message more like
-   "ebcf7a633f0e2487621cb611c2"
+4. If gitlab sees "I ate 45 donkeys for lunch" (the same thing they
+   generated), they let you push your code. If, on the other hand,
+   someone else is _pretending_ to be you, gitlab will see a message
+   more like "ebcf7a633f0e2487621cb611c2"
+5. The next time you communicate with Gitlab, they will encrypt
+   something else, i.e. "I ate 46 donkeys for lunch"
 
 The beauty here is that you _never_ had to share anything sensitive
 with gitlab, but they can still verify your identiy. Also, since there
@@ -90,12 +98,32 @@ these, you can skip to the next section.
 If you don't have a keypair, you can generate one with
 
 ~~~
-ssh-keygen
+ssh-keygen -f ~/.ssh/id_rsa -N '' -C 'test@cern.ch'
 ~~~
 {: .source}
 
-the utility will prompt you to give a location for the file, but the
-default is fine.
+If you leave off `-f` the utility will prompt you to give a location
+for the file, but the default (`~/.ssh/id_rsa`) should be fine. The
+`-N` option means that we won't use a password, and the `-C` option
+specifies a "comment". The commnet is for your own records: using your
+email address is a good way to ensure that everyone knows who it
+belongs to.
+
+Now let's look at your public key:
+
+~~~
+cat ~/.ssh/id_rsa.pub
+~~~
+{: .source}
+
+should print something similar to
+
+~~~
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+AhAzgscltRnYdGI1KTz3H5jr2d/tkgmCK1GxytDYdO4HQdCOpn7pZHK1UcTScW03LrAP8Fbye+QfAVZszeiCOdMy6Emo45HjX2T2nL8zO6OxCXutruOavyFMYu4xfpZ830wJ/wLv0D58plzTrifxkzuvZEnPNr+3ytWf7jUipWbrFExcm+AfyCEc+SYnIYcp+nBlNzUKTCX06EX4uy3PFMaqaGI1+9/bckiu0QHLJei6sAHPdcv8wN18HkLqwjORmVbJOVPEsxRgTXQ35e7DQB9OBqQcEbQ2QIBMKDG7YV5yQ/0kOPbxGIGXnUoas0ZqeaK5gnAP26VlAfMeGOn5 test@cern.ch
+~~~
+{: .output}
+
+Note the `test@cern.ch` at the end.
 
 > ## Application Specific Keys
 >
@@ -104,7 +132,7 @@ default is fine.
 >
 > But if your private key becomes compromised, you'll have to delete your private key everywhere to make sure no steals your identy.
 > You can make this slightly less likely by generating a key _just for gitlab_. Instead of using the default key location, use something like `~/.ssh/gitlab`.
-> Then tell your computer to use the gitlab key when connecting to Gitlab:
+> Then tell your computer to use the gitlab key when connecting to Gitlab by adding this to your `.ssh/config` file:
 > ~~~
 > Host gitlab.cern.ch
 >  User git
@@ -118,6 +146,24 @@ Now that you have the keypair, we'll have to upload the _public_ key
 to Gitlab.
 
 ## Uploading your public key
+
+You can upload your key [via the gitlab interface][gitlab-key]. The
+instructions there should be pretty clear: open the `.ssh/*.pub` file
+with your text editor, and copy it into the "key" field. Give the key
+a name that describes where it came from, i.e. "laptop ssh key".
+
+[gitlab-key]: https://gitlab.cern.ch/profile/keys
+
+### Testing your key
+
+(note from Dan: this needs to be tested)
+
+You can confirm that your key is working by running
+
+~~~
+ssh -T git@gitlab.cern.ch
+~~~
+{: .source}
 
 
 
