@@ -19,7 +19,23 @@ hidden: false
 > - You've uploaded a readme to gitlab
 {: .prereq}
 
-## Delete your local repository
+## Delete your local repository (!)
 
-Flash flood, your laptop is dead!
+First, **make sure your repository on gitlab is there!**
 
+Now let's do something super careless: go to the directory above your repository and run
+
+~~~
+rm -rf my-repository
+~~~
+{: .source}
+
+Poof: gone just like that! This is a contrived case but this _will_ happen to you at some point in the future.
+
+## Bring your local repository back
+
+Good thing we just pused to gitlab. Let's clone the repository again:
+
+~~~
+git clone 
+~~~
