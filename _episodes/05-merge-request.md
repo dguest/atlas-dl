@@ -5,7 +5,7 @@ exercises: 15
 objectives:
 - "Add some code to your local repository"
 - "Make a request for someone else to merge it"
-- "Accept and merge a merge request"
+- "Accept and merge request"
 questions:
 - "How do I fix someone else's code?"
 keypoints:
@@ -13,3 +13,7 @@ keypoints:
 
 hidden: false
 ---
+
+## Finding your friend's repo
+
+something
