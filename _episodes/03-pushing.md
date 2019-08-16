@@ -28,10 +28,9 @@ of the top bar, and select "new project".
 
 This will bring you to a dialog to create the project. The important
 fields are:
- - The "project name": this has should be something relatively simple
-   but descriptive, since it will be part of the URL to find the
-   project in the future. Something like `bootcamp-example` would be
-   fine.
+ - The "project name": in principal this can be anything, but to make
+   things less confusing we'd recommend using the same name you used
+   locally. In this example this is `dan-example`.
  - The "visibility level", there are three levels allowed:
     - Private: only you and people you "share" the project with are
       allowed to see it.

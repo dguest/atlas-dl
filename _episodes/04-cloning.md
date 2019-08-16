@@ -24,7 +24,7 @@ First, **make sure your repository on gitlab is there!**
 Now let's do something super careless: go to the directory above your repository and run
 
 ~~~
-rm -rf my-repository
+rm -rf dan-example
 ~~~
 {: .source}
 
@@ -33,7 +33,7 @@ Poof: gone just like that! This is a contrived case but this _will_ happen to yo
 ## Bring your local repository back
 
 Good thing we just pused to gitlab. Let's clone the repository
-again. Go to the `bootcamp-example` repository on gitlab again, click
+again. Go to your ''`dan-example`'' repository on gitlab again, click
 "clone" button again and copy the "clone with SSH" url. Then run
 
 ~~~

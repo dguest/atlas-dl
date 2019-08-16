@@ -48,13 +48,14 @@ of the working directory, because not everything we're working on will
 be versioned.
 
 ~~~
-mkdir bootcamp-example
-cd bootcamp-example
+mkdir dan-example
+cd dan-example
 git init
 ~~~
 {: .source}
 
-You should see something like
+Where you should replace `dan` with your name. You should see
+something like
 
 ~~~
 Initialized empty Git repository in ...
@@ -64,6 +65,15 @@ Initialized empty Git repository in ...
 where `...` is your working directory. If you try to commit something
 now git will complain that there is nothing to commit. Git has good
 intentions here: in general commiting nothing at all is a mistake.
+
+> ## Name your repository carefully
+>
+> In general you shouldn't make a repository called `dan-example`. We've
+> chosen this name to make it clear that this should be _your_ example with
+> _your_ unique name. Later on we'll be looking at other peoples code so we
+> need everyone to have a unique repository name.
+>
+{: .callout}
 
 ## Adding a file
 

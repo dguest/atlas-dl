@@ -115,10 +115,10 @@ It's good practice to do a few things _before_ you push code to your public repo
  2. make sure it runs
 
 If you're not already in an `AnalysisBase` image, move into the
-directory that _contains_ `bootcamp-example` and run
+directory that _contains_ `dan-example` and run
 
 
-next `cd` to `/home/atlas/Bootcamp`. You should see `bootcamp-example`
+next `cd` to `/home/atlas/Bootcamp`. You should see `dan-example`
 here.
 
 As we learned in the pre-course material, you should build code from a
@@ -127,7 +127,7 @@ directory which is _on the same level_ as your code repository. Create the build
 ~~~
 mkdir build
 cd build
-cmake ../bootcamp-example
+cmake ../dan-example
 make
 ~~~
 {: .bash}
