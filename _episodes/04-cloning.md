@@ -1,13 +1,11 @@
 ---
-title: "Adding ATLAS code"
-teaching: 10
-exercises: 15
+title: "Cloning"
+teaching: 5
+exercises: 5
 objectives:
 - "Delete and re-clone your gitlab project"
-- "Add the rest of your ATLAS code"
-- "Push the code to gitlab"
 questions:
-- "How do I add to an existing project?"
+- "How do I clone an existing project"
 keypoints:
 - "Once you've pushed to gitlab, your code is backed up!"
 
@@ -34,8 +32,12 @@ Poof: gone just like that! This is a contrived case but this _will_ happen to yo
 
 ## Bring your local repository back
 
-Good thing we just pused to gitlab. Let's clone the repository again:
+Good thing we just pused to gitlab. Let's clone the repository
+again. Go to the `bootcamp-example` repository on gitlab again, click
+"clone" button again and copy the "clone with SSH" url. Then run
 
 ~~~
-git clone 
+git clone <copied url>
 ~~~
+
+You should be back where you were before you deleted everything.
