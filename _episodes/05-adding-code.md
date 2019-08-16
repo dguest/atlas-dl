@@ -4,11 +4,13 @@ teaching: 10
 exercises: 10
 objectives:
 - "Add the rest of your ATLAS code"
+- "Compile and test it within the ATLAS environment"
 - "Push the code to gitlab"
 questions:
 - "How do I add to an existing project?"
 keypoints:
-- "No point"
+- "Your credentials can be used within an image"
+- "Always compile and test code before pushing"
 
 hidden: false
 ---
@@ -64,6 +66,31 @@ git commit -m "Add payload and CMakeLists"
 If you run `git status` now, git should indicate that you're one
 commit ahead of master.
 
+## Set up the ATLAS environment
+
+Remember that we created some keys in the `~/.ssh` directory a while
+back? We're going to need to use these to edit code while in the
+docker container where we run ATLAS code.
+
+First copy the keys into the `Bootcamp` directory, make _sure_ you do
+this from the `Bootcamp` directory and **not** from the
+`bootcamp-example` code, which is going to be versioned.
+
+~~~
+cp -r ~/.ssh ssh-credentials
+~~~
+{: .bash}
+
+Then we'll have to launch a docker image:
+
+~~~
+docker run --rm -it -w /home/atlas/Bootcamp -v $PWD:/home/atlas/Bootcamp atlas/analysisbase:21.2.85-centos7 bash -c 'cp -r ssh-credentials ~/.ssh ; bash'
+~~~
+{: .bash}
+
+Let's unpack what we just did there, since it was a _very_ long command:
+ - blork
+
 ## Compile this code
 
 It's good practice to do a few things _before_ you push code to your public repository:
@@ -74,10 +101,6 @@ It's good practice to do a few things _before_ you push code to your public repo
 If you're not already in an `AnalysisBase` image, move into the
 directory that _contains_ `bootcamp-example` and run
 
-~~~
-docker run --rm -it -v $PWD:/home/atlas/Bootcamp atlas/analysisbase:21.2.85-centos7 bash
-~~~
-{: .bash}
 
 next `cd` to `/home/atlas/Bootcamp`. You should see `bootcamp-example`
 here.
@@ -109,4 +132,6 @@ Try running it just to make sure it works.
 Assuming everything compiles and you can run the resulting executable,
 you can push your new code to your repository.
 
-
+~~~
+git push 
+~~~

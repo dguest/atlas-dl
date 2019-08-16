@@ -127,8 +127,8 @@ Note the `test@cern.ch` at the end.
 
 > ## Application Specific Keys
 >
-> We said earlier that you should never share your public key with anyone.
-> This isn't always practical: sometimes you might need your public key on a server somewhere, for example.
+> We said earlier that you should never share your private key with anyone.
+> This isn't always practical: sometimes you might need your private key on a server somewhere, for example.
 >
 > But if your private key becomes compromised, you'll have to delete your private key everywhere to make sure no steals your identy.
 > You can make this slightly less likely by generating a key _just for gitlab_. Instead of using the default key location, use something like `~/.ssh/gitlab`.

@@ -41,9 +41,15 @@ cd ~/work/bootcamp
 ~~~
 {: .source}
 
-Now let's create a git repository
+We'll do our work from here.
+
+Now let's create a git repository. We create this in a _subdirectory_
+of the working directory, because not everything we're working on will
+be versioned.
 
 ~~~
+mkdir bootcamp-example
+cd bootcamp-example
 git init
 ~~~
 {: .source}
