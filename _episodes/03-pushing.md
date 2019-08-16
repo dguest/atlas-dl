@@ -69,7 +69,7 @@ Now you need to go back to your terminal and tell your _local_
 repository that a _remote_ repository lives at this URL.
 
 ~~~
-git remote add gitlab ssh://git@gitlab.cern.ch:7999/rest/of/url.git
+git remote add origin ssh://git@gitlab.cern.ch:7999/rest/of/url.git
 ~~~
 {: .source}
 
@@ -78,7 +78,7 @@ where the last string starting with `ssh://`... is the URL you just copied.
 Now try pushing your local project!
 
 ~~~
-git push -u gitlab master
+git push -u origin master
 ~~~
 {: .source}
 

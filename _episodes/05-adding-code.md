@@ -88,8 +88,24 @@ docker run --rm -it -w /home/atlas/Bootcamp -v $PWD:/home/atlas/Bootcamp atlas/a
 ~~~
 {: .bash}
 
-Let's unpack what we just did there, since it was a _very_ long command:
- - blork
+Let's unpack what we just did there, since it was a _very_ long command. `docker run`, runs a container, but we supplied a few named arguments:
+ - `--rm`: tells docker to delete the container when you exit
+ - `-it`: two arguments, run **i**nteractive with attached **t**erminal
+ - `-w`: sets the directory you'll be in when the container starts
+ - `-v`: mounts your current directory within the image so you can
+   access files on your laptop
+
+There were also a few positional arguments (those without a `-*`
+flag).
+
+The first points to a container: in this case we're using an ATLAS
+release which includes all the libraries we'll need for analysis work.
+
+The second argument tells the container what to run in the
+container. This one is more complicated than what you might have seen
+before because we have to copy our credentials into a place in the
+image where git will find them.
+
 
 ## Compile this code
 
@@ -133,5 +149,5 @@ Assuming everything compiles and you can run the resulting executable,
 you can push your new code to your repository.
 
 ~~~
-git push 
+git push origin master
 ~~~
