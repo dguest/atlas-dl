@@ -74,17 +74,22 @@ docker container where we run ATLAS code.
 
 First copy the keys into the `Bootcamp` directory, make _sure_ you do
 this from the `Bootcamp` directory and **not** from the
-`bootcamp-example` code, which is going to be versioned.
+`bootcamp-example` code, which is going to be versioned. Also copy
+your git configuration file, so that your commits include your name
+and email.
 
 ~~~
 cp -r ~/.ssh ssh-credentials
+cp ~/.gitconfig gitconfig
 ~~~
 {: .bash}
 
 Then we'll have to launch a docker image:
 
 ~~~
-docker run --rm -it -w /home/atlas/Bootcamp -v $PWD:/home/atlas/Bootcamp atlas/analysisbase:21.2.85-centos7 bash -c 'cp -r ssh-credentials ~/.ssh ; bash'
+docker run --rm -it -w /home/atlas/Bootcamp -v \
+    $PWD:/home/atlas/Bootcamp atlas/analysisbase:21.2.85-centos7 \
+    bash -c 'cp -r ssh-credentials ~/.ssh; cp gitconfig ~/.gitconfig ; bash'
 ~~~
 {: .bash}
 
@@ -104,8 +109,17 @@ release which includes all the libraries we'll need for analysis work.
 The second argument tells the container what to run in the
 container. This one is more complicated than what you might have seen
 before because we have to copy our credentials into a place in the
-image where git will find them.
+image where git will find them[^1].
 
+[^1]: Later on we'll learn how to build our own containers based on
+    the official atlas ones. There you'll learn to run scripts
+    automatically when the container starts.
+
+> ## Exercise: Script the `docker run` command
+>
+> You might have to call this quite a few times, write a shell script
+> so that it's reduced to running `./run-docker.sh`
+{: .challenge}
 
 ## Compile this code
 
@@ -151,3 +165,6 @@ you can push your new code to your repository.
 ~~~
 git push origin master
 ~~~
+
+## Notes
+

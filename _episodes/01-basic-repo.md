@@ -151,7 +151,7 @@ Changes to be committed:
 > Git can color its text to make it easier on your brain. If you don't
 > see untracked files in red and the `new file` as green, you can run
 > ~~~
-> git config --global something.i.have.to.check.when.i.have.internet on
+> git config --global color.ui auto
 > ~~~
 > {: .source}
 {: .callout}
@@ -164,7 +164,7 @@ git commit -m "Add README file"
 {: .source}
 
 In general git will force you to create a commit message. You should
-[try to write _good_ commit messages](TODO:link-to-git-commit-tips),
+[try to write _good_ commit messages][good],
 since this helps everyone understand what you were doing. In this case
 it's pretty self-explanitory, but in many real world examples a commit
 might just change one line deep inside your code. A commit message is
@@ -177,3 +177,5 @@ verbose, you can use the contents of a text file with
 
 This all might be review, but next the real fun begins: we'll push
 this repository to gitlab.
+
+[good]: https://chris.beams.io/posts/git-commit/

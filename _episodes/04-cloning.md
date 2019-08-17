@@ -41,3 +41,10 @@ git clone <copied url>
 ~~~
 
 You should be back where you were before you deleted everything.
+
+> Cloning with other protocols
+>
+> Here we assumed that you used the `ssh` method, but gitlab allows
+> you to clone with `kerberos` or via `https` as well. All will work
+> equally well, your choice should be based on what you consider most
+> convenient.
