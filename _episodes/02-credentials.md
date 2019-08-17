@@ -7,7 +7,7 @@ objectives:
 questions:
 - "How do I add my credentials?"
 keypoints:
-- "Use your `.ssh/gitlab` and `.ssh/gitlab.pub` keys to veryify your identy to CERN"
+- "Use your `.ssh/id_rsa` and `.ssh/id_rsa.pub` keys to veryify your identy to CERN"
 
 hidden: false
 ---
