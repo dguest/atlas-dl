@@ -149,17 +149,6 @@ a name that describes where it came from, i.e. "laptop ssh key".
 
 [gitlab-key]: https://gitlab.cern.ch/profile/keys
 
-### Testing your key
-
-(note from Dan: this needs to be tested)
-
-You can confirm that your key is working by running
-
-~~~
-ssh -T git@gitlab.cern.ch
-~~~
-{: .source}
-
 
 
 
