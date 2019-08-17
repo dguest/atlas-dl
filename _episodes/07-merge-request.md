@@ -17,6 +17,7 @@ hidden: false
 >
 > - You can run your code in a docker container.
 > - You've forked and modified someone else's repository
+> - Your changes are on a branch called `change-cuts`
 {: .prereq}
 
 This episode explains the standard ATLAS procedure for pushing changes
@@ -41,4 +42,29 @@ origin	ssh://git@gitlab.cern.ch:7999/dguest/sam-example.git (push)
 ~~~
 {: .output}
 
-Note that this is _my_ fork of _Sam's_ example code.
+Note that this is _your_ fork of your friend's example code.
+
+Now push your code to your fork.
+~~~
+git push origin change-cuts
+~~~
+{: .bash}
+
+git should tell you that it pushed a branch and print a URL that you
+can visit to make a merge request into the parent fork. This is a
+convenient shortcut but for demonstration purposes we'll set
+everything up manually.
+
+# Making a merge request
+
+The url for your fork will always be something like
+
+~~~
+https://gitlab.cern.ch/YOUR_USER_NAME/REPOSITORY_NAME
+~~~
+
+where `YOUR_USER_NAME` is your CERN login and `REPOSITORY_NAME` is
+whatever your friend called their repository.
+
+Go to this url and click the "merge requests" button on the left
+side. Next click the big green button that says "new merge request". This will bring up a "New Merge Request" dialog.

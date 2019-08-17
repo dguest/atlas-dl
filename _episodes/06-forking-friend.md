@@ -151,4 +151,25 @@ resulting histograms, are they what you'd expect?
 
 Conceptually branches in git are nothing more than a bookmark pointing
 at the most recent in a line of commits. As such they are very
-lightweight to create.
+lightweight to create and you should use them liberally.
+
+You should _always_ create a branch when you make a merge request.
+Since you're requesting that a very specific set of changes be
+reviewed and merged, you don't want any further development you add to
+`master` to be pushed into the request.
+
+If this seems a bit confusing that's fine, it should be more clear in
+the near future.
+
+For now, create a new branch and commit your changes:
+
+~~~
+cd friends-repo
+git checkout -b change-cuts
+git add AnalysisPayload.cxx
+git commit -m "change cuts in AnalysisPayload" -m "more detailed explanation of your changes"
+~~~
+{: .bash}
+
+In the next episode we'll learn to push this to your fork and make a
+merge request.

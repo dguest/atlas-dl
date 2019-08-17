@@ -42,17 +42,17 @@ interact with gitlab, you'll be prompted to enter a password. This is
 the authentication method when you use "`https`" to communicate with
 gitlab.
 
-Advantages:
+**Advantages:**
 - Ubiquitous: everyone understands the concept
 - Works anywhere (if you remember your password)
 - No setup required, you just make up a password
 
-Disadvantages:
+**Disadvantages:**
 - Annoying: especially if you use a password manager (you should) this
   will be very slow
 - Accident prone: a "secret" that you type or paste a hundred times a
-  day will inevitably be leaked
-- Insecure: passwords always end up being leaked
+  day will inevitably be entered into the wrong place by accident
+- Insecure: passwords always end up being leaked _by other services_.
 
 ### Public Key Cryptography (`ssh`)
 
@@ -65,13 +65,14 @@ your laptop, while the "public" one gets uploaded to gitlab.
 
 In gitlab, this is supported via the "`ssh`" authentication method.
 
-Advantages:
-- Very secure
+**Advantages:**
+- Very secure: all gitlab ever sees is your public key, and no one can
+  steal your identity with your public key (it's already public!)
 - Painless after the initial setup
 - Second in popularity to passwords: most servers (and github) support
   this authentication method.
 
-Disadvantages:
+**Disadvantages:**
 - Requires that you generate a key pair (one time)
 - Requires you to upload a public key to gitlab
 - Your private key has to accessible on your local system

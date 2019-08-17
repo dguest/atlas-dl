@@ -93,7 +93,10 @@ docker run --rm -it -w /home/atlas/Bootcamp -v \
 ~~~
 {: .bash}
 
-Let's unpack what we just did there, since it was a _very_ long command. `docker run`, runs a container, but we supplied a few named arguments:
+We'll come back to this in a few days, but let's unpack what we just
+did there, since it was a _very_ long command. `docker run`, runs a
+container, but we supplied a few named arguments:
+
  - `--rm`: tells docker to delete the container when you exit
  - `-it`: two arguments, run **i**nteractive with attached **t**erminal
  - `-w`: sets the directory you'll be in when the container starts
@@ -119,6 +122,9 @@ image where git will find them[^1].
 >
 > You might have to call this quite a few times, write a shell script
 > so that it's reduced to running `./run-docker.sh`
+>
+> We'll learn a lot more about what these commands are doing later this
+> week.
 {: .challenge}
 
 ## Compile this code
