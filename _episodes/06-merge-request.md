@@ -33,7 +33,9 @@ github. The general idea is to:
 - Make a "merge request" to ask your friend to review / accept your
   changes.
 
-**Note:** You should work within the
+**Note:** You can interact with git from your native laptop
+  environment or within the images. From now on we'll _assume_ you are
+  in the image.
 
 ## Forking your "friend's" repo
 
