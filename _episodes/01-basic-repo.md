@@ -156,6 +156,21 @@ Changes to be committed:
 > {: .source}
 {: .callout}
 
+> ## Setting your name and email
+>
+> In the Git session you had to configure git to add your name and
+> email to every commit, using `git config`. We'd recommend you use your
+> CERN account email and name so that the names on local commits match the
+> ones you'll create via gitlab.
+>
+> To change this you can run
+> ~~~
+> git config --global user.name <your cern name>
+> git config --global user.email <your cern email>
+> ~~~
+{: .callout}
+
+
 Great, now our reedme is ready to commit.
 
 ~~~

@@ -1,15 +1,15 @@
 ---
-title: "Making a merge request"
+title: "Modifying your friend's code"
 teaching: 10
 exercises: 15
 objectives:
 - "Make a friend"
-- "Make a merge request to your friends repo"
-- "Accept and merge request"
+- "Build and run your friend's code"
+- "Add kinematic cuts"
 questions:
-- "How do I fix someone else's code?"
+- "How do I run someone else's code?"
 keypoints:
-- "You can fix someone else's code without direct edit rights to their repository"
+- "You can (and usually will) start with someone else's code"
 
 hidden: false
 ---
@@ -117,11 +117,38 @@ should become
 ~~~
 {: .source}
 
-Once you've done this, recompile and rerun the code. You should see
-twice as many histograms in the output ROOT file.
+Recompile the code just to make sure there are no obvious issues.
 
 ### Adding a selection
 
-Now let's add a selection.
+Now let's add some selection requirements. Somewhere in your code you
+might already be creating a `std::vector<xAOD::Jet>` and filling it
+with all the jets in the event. Add a second container which will only
+be filled with your selection. Then fill this with all the jets with
+pt greater than 50 GeV.
+
+Your code should end up _somthing like_ this:
+
+~~~
+    std::vector<xAOD::Jet> jets_kin;
+    for(const xAOD::Jet* jet : *jets) {
+      // perform kinematic selections and store in vector of "selected jets"
+      if(jet->pt() > 50e3){
+        jets_kin.push_back(*jet);
+      }
+    }
+~~~
+{: .source}
+
+Now fill two histograms with this selection: one for `n_jets` and one
+for the invariant mass of the leading two jets.
+
+Finally, recompile and _try_ to run the code. Take a look at the
+resulting histograms, are they what you'd expect?
 
 
+## Committing on a branch
+
+Conceptually branches in git are nothing more than a bookmark pointing
+at the most recent in a line of commits. As such they are very
+lightweight to create.
