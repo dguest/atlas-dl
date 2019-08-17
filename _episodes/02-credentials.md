@@ -12,9 +12,9 @@ keypoints:
 hidden: false
 ---
 
-> ## **NOTE:** we probably don't need this section
+> ## **NOTE:** This is also documented elsewhere
 >
-> This could be replaced by [the gitlab documentation on the same topic][gitlab-keys]
+> See [the gitlab documentation on the same topic][gitlab-keys]
 {: .callout}
 
 [gitlab-keys]: https://gitlab.cern.ch/help/ssh/README
@@ -25,66 +25,61 @@ hidden: false
 > - You already have an example local repository with a README file
 {: .prereq}
 
-In this episode we'll finally get to putting something in gitlab
+In this episode we'll finally get to putting something in gitlab. Of
+course if you're going to put something on gitlab, you have to have a
+way to convince gitlab who you are. This is where authentication comes
+in.
 
-## Aside: passwords are terrible security
+## Authentication: Several Options
 
-If you're like most people, when you think of authentication you think
-of passwords. This is probably owing to their visibility: the concept
-behind them isn't hard to understand, and you probalby have to type
-them in several times a day.
+There are a few ways to authenticate yourself, each with benefits and
+drawbacks.
 
-But passwords are terrible. They are annoying to type, (relatively)
-easy to guess, prone to errors, and password reuse is probably the
-single biggest cause of those massive security breaches you learn
-about on the news.
+### Passwords (`https:`)
 
-Without getting into all the details of
-[public key cryptography][asymcrypto], there's a _much more secure_
-way to authenticat yourself. The idea is pretty awesome:
+This is probably the method you're most familiar with: every time you
+interact with gitlab, you'll be prompted to enter a password. This is
+the authentication method when you use "`https`" to communicate with
+gitlab.
 
-  - You create an **assymetric** key _pair_, A and B. These are magic
-    little one-way pipes: you can encrypt something with A and _no
-    one_ can decrypt it without B, _even if they have_ A. Conversely,
-    if you encrypt something with B _no one_ can decrypt it without A,
-    even if they have B.
+Advantages:
+- Ubiquitous: everyone understands the concept
+- Works anywhere (if you remember your password)
+- No setup required, you just make up a password
 
-    If you're used to reversable processes from physics class, this
-    idea might make your head hurt. Don't worry; it's weird but, it
-    works.
+Disadvantages:
+- Annoying: especially if you use a password manager (you should) this
+  will be very slow
+- Accident prone: a "secret" that you type or paste a hundred times a
+  day will inevitably be leaked
+- Insecure: passwords always end up being leaked
 
-  - You call one of these your "public" key. You can share this with
-    anyone or everyone. The other one becomes your "private" key,
-    **you never share this with anyone**, it just lives on your
-    computer.
+### Public Key Cryptography (`ssh`)
 
-The neat thing about this system is that it gives _everyone_ a way to
-verify that they are in fact talking to _you_.
+If you don't know much about public key cryptography it's probably
+worth reading the [wikipedia page on the subject][asymcrypto]. In
+essence it's a bit of cryptograpic magic that enables secure
+communication without ever letting your "password" leave your
+laptop. Instead you'll generate a key pair: the "private" key lives on
+your laptop, while the "public" one gets uploaded to gitlab.
 
-But to get back to our lesson: say you want to push some information to
-gitlab. Obviously we want to make sure gitlab knows who you are so
-some stranger isn't pushing to _your_ repository.
+In gitlab, this is supported via the "`ssh`" authentication method.
 
-While it's an oversimplification, the exchange looks _something_ like
-this:
+Advantages:
+- Very secure
+- Painless after the initial setup
+- Second in popularity to passwords: most servers (and github) support
+  this authentication method.
 
-0. You generate a key pair, and share your public key with gitlab. Again you **never** share your private key with anyone.
-1. Gitlab uses your public key and encrypts a short message, maybe
-   something like "I ate 45 donkeys for lunch"
-2. Gitlab sends you the _encrypted_ message.
-3. You decrypt it _with your private key_ and send the unencrypted
-   message back.
-4. If gitlab sees "I ate 45 donkeys for lunch" (the same thing they
-   generated), they let you push your code. If, on the other hand,
-   someone else is _pretending_ to be you, gitlab will see a message
-   more like "ebcf7a633f0e2487621cb611c2"
-5. The next time you communicate with Gitlab, they will encrypt
-   something else, i.e. "I ate 46 donkeys for lunch"
+Disadvantages:
+- Requires that you generate a key pair (one time)
+- Requires you to upload a public key to gitlab
+- Your private key has to accessible on your local system
 
-The beauty here is that you _never_ had to share anything sensitive
-with gitlab, but they can still verify your identiy. Also, since there
-are no passwords (only keys on computers) the whole process can be
-automated!
+Since it's more secure than passwords, automated transactions via
+`ssh` aren't considered bad practice and are in fact encouraged. We'll
+use this method by default since it streamlines an operation that
+you'll have to do hundreds of times over the next few days.
 
 [asymcrypto]: https://en.wikipedia.org/wiki/Public-key_cryptography
 
