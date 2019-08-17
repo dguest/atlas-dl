@@ -42,7 +42,18 @@ origin	ssh://git@gitlab.cern.ch:7999/dguest/sam-example.git (push)
 ~~~
 {: .output}
 
-Note that this is _your_ fork of your friend's example code.
+From the part after the second to rightmost slash you can tell that:
+- This is _your_ fork (`dguest/`)
+- Of your friend's example code (`sam-example`)
+
+> ## Exercise: add another remote
+>
+> Try to add another remote that points to your _friend's_ repository.
+>
+> Hint: you should be able to navigate to it from the "project" section
+> of the your fork on gitlab, click the little house on the upper left.
+> From there you should see the parent repo that you forked from.
+{: .challenge}
 
 Now push your code to your fork.
 ~~~
