@@ -129,7 +129,7 @@ image where git will find them[^1].
 
 ## Compile this code
 
-It's good practice to do a few things _before_ you push code to your public repository:
+It's good practice to do a few things _before_ you push code to your public repository:[^2]
 
  1. make sure it compiles
  2. make sure it runs
@@ -137,6 +137,8 @@ It's good practice to do a few things _before_ you push code to your public repo
 If you're not already in an `AnalysisBase` image, move into the
 directory that _contains_ `dan-example` and run
 
+[^2]: Running these tests for every commit can get tedious, later this
+    week we'll learn to do this in an automated way.
 
 next `cd` to `/home/atlas/Bootcamp`. You should see `dan-example`
 here.

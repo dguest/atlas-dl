@@ -24,7 +24,7 @@ git. Earlier we learned that you can add your collaborators public
 repositories as remotes and merge their changes directly into your
 code.
 
-ATLAS follows a slightly more web-gui--focused workflow which you
+ATLAS follows a slightly more [web-gui--focused workflow][athena] which you
 _might_ have seen if you've ever contributed to a project on
 github. The general idea is to:
 
@@ -36,6 +36,8 @@ github. The general idea is to:
 **Note:** You can interact with git from your native laptop
   environment or within the images. From now on we'll _assume_ you are
   in the image.
+
+[athena]: https://atlassoftwaredocs.web.cern.ch/gittutorial/
 
 ## Forking your "friend's" repo
 

@@ -84,6 +84,14 @@ you'll have to do hundreds of times over the next few days.
 
 [asymcrypto]: https://en.wikipedia.org/wiki/Public-key_cryptography
 
+### Kerberos
+
+Kerberos offers the best, or worst, of both worlds:
+- It requires you to enter a password once for each session
+- For the rest of the session it should remember the password
+
+It requires some less-than-standard packages as well.
+
 ## Generating an ssh keypair
 
 Chances are you might already have one of these pairs kicking

@@ -50,9 +50,11 @@ From the part after the second to rightmost slash you can tell that:
 >
 > Try to add another remote that points to your _friend's_ repository.
 >
-> Hint: you should be able to navigate to it from the "project" section
-> of the your fork on gitlab, click the little house on the upper left.
-> From there you should see the parent repo that you forked from.
+> > ## Hint
+> > you should be able to navigate to it from the "project" section
+> > of the your fork on gitlab, click the little house on the upper left.
+> > From there you should see the parent repo that you forked from.
+> {: .solution}
 {: .challenge}
 
 Now push your code to your fork.
