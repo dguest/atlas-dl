@@ -79,5 +79,25 @@ https://gitlab.cern.ch/YOUR_USER_NAME/REPOSITORY_NAME
 where `YOUR_USER_NAME` is your CERN login and `REPOSITORY_NAME` is
 whatever your friend called their repository.
 
-Go to this url and click the "merge requests" button on the left
-side. Next click the big green button that says "new merge request". This will bring up a "New Merge Request" dialog.
+ - Go to this url and click the "merge requests" button on the left
+ side
+ - Click the big green button that says "new merge request"
+ - This will bring up a "New Merge Request" dialog
+    + From the "source branch" block on the left, select the
+      "change-cuts" branch
+    + From the "target branch" block on the right, select
+      `friend-username/repo-name`, and `master`
+ - click the green "compare branches and continue"
+
+This should bring up a "New Merge Request" dialog you should fill out
+the following fields:
+
+ - Title: should be descriptive but short (around 50 characters)
+ - Description: as a general rule you should try to give the reasons
+   reasons for the changes you made, i.e. if you changed the jet pt
+   cut to 50 GeV, explain _why_ you did this; just saying _that_ you
+   changed the jet pt cut is redundant since that's clear from the
+   commit.
+ - Most of the other boxes you don't need to touch
+ - "Delete source branch wen merge request" can be useful to keep your
+   repository clean.
