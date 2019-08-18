@@ -31,8 +31,7 @@ hill [and one of the turkeys steals it!](https://www.youtube.com/watch?v=gR1nfWA
 > Be _very_ careful where you put your code while developing within
 > containers! Nothing in the image is saved when you exit, so make sure you
 > develop within the directories you've mounted on your laptop.
->
-> **AGAIN! Be very careful and understand/appreciate this point, if you don't, then ask your instructor.**
+> **If you don't, then ask your instructor.**
 >
 {: .callout}
 
@@ -76,15 +75,14 @@ intentions here: in general commiting nothing at all is a mistake.
 >
 > In general you shouldn't make a repository called `dan-example`. We've
 > chosen this name to make it clear that this should be _your_ example with
-> _your_ unique name. Later on we'll be looking at other peoples code so we
-> need everyone to have a unique repository name.
+> _your_ unique name. Our reason for this is pedagogical: we want everyone
+> to develop their own code, but we also want you to be able to fork your
+> friend's code and develop that. This would get very confusing if everyone
+> used the same name.
 >
-> This may seem like a silly point, but it will be important later
-> when you start to "fork" the repository of a friend.  This will try
-> to make a copy, with the same name, in your Gitlab space and so if there
-> are two repositories copied here with the same name, mayhem will ensue.
->
-> You should try it to see for yourself what happens! **Bonus points for anyone who does and shows others.**
+> In a real world setting it would be very silly for everyone to name
+> their code after themselves and rewrite it from scratch. Your repository
+> name should reflect _what it does_ not _who wrote it_.
 >
 {: .callout}
 
@@ -118,7 +116,7 @@ If I code well, they will prase me.
 ~~~
 {: .language-markdown}
 
-and save the file. [Hoo-rah](https://www.hopeforthewarriors.org/newsroom/oorah-v-hoora/)! Let's ask git what is sees now:
+and save the file. (Note from Sam: please don't confuse [Hoo-rah and Oorah](https://www.hopeforthewarriors.org/newsroom/oorah-v-hoora/)) Let's ask git what is sees now:
 
 ~~~
 git status
@@ -187,7 +185,7 @@ Changes to be committed:
 Great, now our `README.md` is ready to commit.
 
 ~~~
-git commit -m "Add README file"
+git commit -m "Add README file" -m "And a pretty poor README at that"
 ~~~
 {: .source}
 
@@ -199,9 +197,12 @@ might just change one line deep inside your code. A commit message is
 a very good way to explain _why_ you decided to make this change.
 
 Also note that a good commit message might run for several paragraphs
-to explain the full context of the commit. If you need something more
-verbose, you can use the contents of a text file with
-`git commit -F file.txt`.
+to explain the full context of the commit.
+Each time you call `-m` it will start a new paragraph, which is convient
+if you want to write a short (less than 50 characters is recommended)
+description followed by a longer one.
+If you need something more verbose, you can use the contents of a text
+file with `git commit -F file.txt`.
 
 This all might be review, but next the real fun begins: we'll push
 this repository to gitlab.
