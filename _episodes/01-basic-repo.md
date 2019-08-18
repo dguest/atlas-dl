@@ -24,7 +24,7 @@ CERN gitlab is extremely easy.
 We'll be working with this repository for the remainder of this
 workshop, so before doing anything let's make sure you're putting your
 code somewhere where you won't lose it! For instance, if you drop your laptop down the
-hill of the lab and one of those pesky turkeys steals it! [https://www.youtube.com/watch?v=gR1nfWA-sEQ&feature=youtu.be](Gobble gobble!!!)
+hill [and one of the turkeys steals it!](https://www.youtube.com/watch?v=gR1nfWA-sEQ&feature=youtu.be)
 
 > ## Code in Docker Containers/Images
 >
@@ -50,7 +50,7 @@ We'll do our work from here.
 
 Now let's create a git repository. We create this in a _subdirectory_
 of the working directory, because not everything we're working on will
-be versioned.  We will only be preserving in Gitlab the stuff that we put in
+be versioned.  Gitlab only saves the stuff that we put in
 this subdirectory.
 
 ~~~
@@ -118,7 +118,7 @@ If I code well, they will prase me.
 ~~~
 {: .language-markdown}
 
-and save the file. Now if that `README.md` doesn't get people going, then I don't know what will, am I right? [Hoo-rah](https://www.hopeforthewarriors.org/newsroom/oorah-v-hoora/)! Let's ask git what is sees now:
+and save the file. [Hoo-rah](https://www.hopeforthewarriors.org/newsroom/oorah-v-hoora/)! Let's ask git what is sees now:
 
 ~~~
 git status

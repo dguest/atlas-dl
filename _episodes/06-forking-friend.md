@@ -40,6 +40,14 @@ github. The general idea is to:
 
 [athena]: https://atlassoftwaredocs.web.cern.ch/gittutorial/
 
+> ## Friendtime activity!
+>
+> Find a friend and get them to point you to their repository.
+> You'll be making a merge request to their code.
+>
+{: .testimonial}
+
+
 ## Forking your "friend's" repo
 
 Assuming everyone has marked their repository public you should be
