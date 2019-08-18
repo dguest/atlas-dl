@@ -21,13 +21,15 @@ hidden: false
 {: .prereq}
 
 This episode explains the standard ATLAS procedure for pushing changes
-to code back to the original authors. If you've contributed to open
-source projects on github the procedure should be familiar, with a few
+to code back to the original authors. Once you are comfortable with this procedure,
+you will be in a position to start contributing to the ATLAS Athena code base
+using the same procedure, described [here](https://atlassoftwaredocs.web.cern.ch/gittutorial/).
+If you've contributed to open source projects on github the procedure should be familiar, with a few
 "gitlab" specific differences.
 
 # Pushing your changes to your fork
 
-First let's make sure your remotes are set up properly:
+First let's make sure your remote repositories are set up properly:
 
 ~~~
 git remote -v
@@ -44,7 +46,7 @@ origin	ssh://git@gitlab.cern.ch:7999/dguest/sam-example.git (push)
 
 From the part after the second to rightmost slash you can tell that:
 - This is _your_ fork (`dguest/`)
-- Of your friend's example code (`sam-example`)
+- This is from your friend's example code (`sam-example`)
 
 > ## Exercise: add another remote
 >
@@ -70,7 +72,7 @@ everything up manually.
 
 # Making a merge request
 
-The url for your fork will always be something like
+The URL for your fork will always be something like
 
 ~~~
 https://gitlab.cern.ch/YOUR_USER_NAME/REPOSITORY_NAME

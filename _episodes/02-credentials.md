@@ -7,7 +7,7 @@ objectives:
 questions:
 - "How do I add my credentials?"
 keypoints:
-- "Use your `.ssh/id_rsa` and `.ssh/id_rsa.pub` keys to veryify your identy to CERN"
+- "Use your `.ssh/id_rsa` and `.ssh/id_rsa.pub` keys to verify your identy to CERN"
 
 hidden: false
 ---
@@ -32,8 +32,8 @@ in.
 
 ## Authentication: Several Options
 
-There are a few ways to authenticate yourself, each with benefits and
-drawbacks.
+There are a few ways to authenticate yourself, depending on the precise [communication protocol](https://www.howtogeek.com/181767/htg-explains-what-is-https-and-why-should-i-care/)
+that you want to use.  Each of these has benefits and drawbacks.
 
 ### Passwords (`https:`)
 
@@ -84,7 +84,7 @@ you'll have to do hundreds of times over the next few days.
 
 [asymcrypto]: https://en.wikipedia.org/wiki/Public-key_cryptography
 
-### Kerberos
+### Kerberos (`krb5`)
 
 Kerberos offers the best, or worst, of both worlds:
 - It requires you to enter a password once for each session
@@ -92,14 +92,18 @@ Kerberos offers the best, or worst, of both worlds:
 
 It requires some less-than-standard packages as well.
 
-## Generating an ssh keypair
+## Setting up `ssh`
+
+Because the `ssh` authentication protocol is secure and common,
+that is the method that we will configure here and which is commonly used
+in ATLAS.
 
 Chances are you might already have one of these pairs kicking
 around. The public key usually lives in `~/.ssh/id_rsa.pub`, whereas
 the private key is usually called `~/.ssh/id_rsa`. If you already have
 these, you can skip to the next section.
 
-If you don't have a keypair, you can generate one with
+If you don't have a keypair, you can generate one now ([other documentation on how to do this](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent))
 
 ~~~
 ssh-keygen -f ~/.ssh/id_rsa -N '' -C 'test@cern.ch'
@@ -109,7 +113,7 @@ ssh-keygen -f ~/.ssh/id_rsa -N '' -C 'test@cern.ch'
 If you leave off `-f` the utility will prompt you to give a location
 for the file, but the default (`~/.ssh/id_rsa`) should be fine. The
 `-N` option means that we won't use a password, and the `-C` option
-specifies a "comment". The commnet is for your own records: using your
+specifies a "comment". The comment is for your own records: using your
 email address is a good way to ensure that everyone knows who it
 belongs to.
 

@@ -66,6 +66,22 @@ git commit -m "Add payload and CMakeLists"
 If you run `git status` now, git should indicate that you're one
 commit ahead of master.
 
+> ## Should I add my data files?
+>
+> NO!! No no no! You should not add your DAOD files, or root files, to your repositories.  This is a
+> big no no in ATLAS and goes under the name of adding "binaries" because they are data files
+> that are only machine readable.  Due to the way that things get versioned, this can cause repositories
+> to explode and during Run1 of the LHC/ATLAS, this caused for the entire ATLAS version control system (at
+> that time is was [SVN-Subversion](https://subversion.apache.org/)) to crash.  **People crashed the mainframe because they did this**.
+> Not to mention that it just quickly makes a repository large and bloated and very cumbersome (large) to clone.
+>
+> <br>
+>
+> Now, unfortunately some people still do this.  We will pick on the luminosity group in this instance [gonzales/mblumi](https://gitlab.cern.ch/gonzales/mblumi).
+> If you find a colleague is doing this, please try to educate them. #greatergood
+>
+{: .callout}
+
 ## Set up the ATLAS environment
 
 Remember that we created some keys in the `~/.ssh` directory a while
@@ -120,11 +136,12 @@ image where git will find them[^1].
 
 > ## Exercise: Script the `docker run` command
 >
-> You might have to call this quite a few times, write a shell script
+> You might have to call this quite a few times throughout the remainder of the week, so it would be advisable to write a shell script
 > so that it's reduced to running `./run-docker.sh`
 >
-> We'll learn a lot more about what these commands are doing later this
-> week.
+> However, we'll learn a lot more about what these commands are doing later this
+> week.  So if you are a bit unsure of this, then don't worry, for now let's just worry about "getting it to work".
+> But if Thursday comes and you are still unsure, then keep asking until you are sure.
 {: .challenge}
 
 ## Compile this code
@@ -134,16 +151,18 @@ It's good practice to do a few things _before_ you push code to your public repo
  1. make sure it compiles
  2. make sure it runs
 
-If you're not already in an `AnalysisBase` image, move into the
+You want to do this so that if a colleague of yours clones your repository, they are not left with a frustrating situation
+of debugging your code that was checked in hastily after "just making that one small change" that actually broke
+things and caused a segfault later on.  Don't be "that colleague".  If you're not already in an `AnalysisBase` image, move into the
 directory that _contains_ `dan-example` and run
 
 [^2]: Running these tests for every commit can get tedious, later this
-    week we'll learn to do this in an automated way.
+    week we'll learn to do this in an automated way which will help prevent you from being "that colleague".
 
 next `cd` to `/home/atlas/Bootcamp`. You should see `dan-example`
 here.
 
-As we learned in the pre-course material, you should build code from a
+As we learned in the pre-workshop material, you should build code from a
 directory which is _on the same level_ as your code repository. Create the build directory and build your code.
 
 ~~~
@@ -162,7 +181,12 @@ Try running it just to make sure it works.
 > ## What if something doesn't work?
 >
 > If something is broken _you should fix it_! If you have to fix anything
-> you can commit your changes with `git commit -am "fix bug"`
+> you can commit your changes with `git commit -am "fix bug"` which is a bit of short hand
+> and has mashed together the `-a` argument (which effectively performs a `git add -u`)
+> and the `git commit` command with a commit message.  Don't forget to make
+> the commit message verbose, "fix bug" itself is not so verbose given that you
+> will probably be fixing many bugs during your time in the experiment.
+>
 {: .callout}
 
 ## Push the code

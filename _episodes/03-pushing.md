@@ -23,10 +23,10 @@ repository.
 
 ## Creating an empty repository on gitlab
 
-Go to [gitlab.cern.ch], click the little "plus" icon on the center
-of the top bar, and select "new project".
+Go to [gitlab.cern.ch](gitlab.cern.ch) and click the little "plus" dropdown icon near the center
+of the top bar, and select "New project".
 
-This will bring you to a dialog to create the project. The important
+This will bring you to a dialog page to create the project. The important
 fields are:
  - The "project name": in principal this can be anything, but to make
    things less confusing we'd recommend using the same name you used
@@ -36,12 +36,17 @@ fields are:
       allowed to see it.
     - Internal: **everyone with a CERN account** can see the
       project. This will _not_ hide anything from e.g. CMS.
-    - Public (**use this**): everyone with the URL can see the project
+    - Public (**use this**): everyone with the URL can see the project. This is not always the option you should choose, but for our purposes it is what we want.
 
    Note that there is no option here to make projects
    "ATLAS-only". For anything that isn't _extermely_ sensitive
-   (i.e. you discovered a new particle and explicetly say this in your
-   project) public should be fine.
+   (i.e. you discovered a new particle and explicitly say this in your
+   project) public should be fine.  There are some ongoing discussions on how
+   to achieve this for more official repositories within ATLAS by using "cascading"
+   permissions based on egroup email lists.  One example of this is the [gitlab.cern.ch/atlas-phys](https://gitlab.cern.ch/atlas-phys) group
+   that is intended to house all analyses within ATLAS.  If you look in here, you will see that you are a "Reporter" for all projects, meaning
+   you can view them.  However, these are hidden from anyone else.  Gitlab knows this because everyone who is a part of the `atlas-current-physicists`
+   is automagically added here. More on permissions can be found [here](https://docs.gitlab.com/ee/user/permissions.html).
  - The "**Initialize repository with a README**" checkbox. Do **not**
    check this, we'll upload the readme from your local repository.
 
