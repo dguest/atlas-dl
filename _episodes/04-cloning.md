@@ -58,7 +58,7 @@ Poof: gone just like that! This is a contrived case but this _will_ happen to yo
 
 ## Bring your local repository back
 
-Good thing we just pused to gitlab. Let's clone the repository
+Good thing we just pushed to gitlab. Let's clone the repository
 again. Go to your ''`dan-example`'' repository on gitlab again, click
 "clone" button again and copy the "clone with SSH" url. Then run
 

@@ -5,11 +5,12 @@ exercises: 15
 objectives:
 - "Remind you how to create a _very basic_ repository"
 - "Add your credentials to CERN's Gitlab"
-- "Push your simple readme"
+- "Push your simple `README.md`"
 questions:
 - "How do I create a simple repository?"
 keypoints:
 - "_Always_ add a `README.md` file to your repositry"
+- "Write verbose and useful commit messages."
 
 
 hidden: false
@@ -22,16 +23,20 @@ CERN gitlab is extremely easy.
 
 We'll be working with this repository for the remainder of this
 workshop, so before doing anything let's make sure you're putting your
-code somewhere where you won't loose it!
+code somewhere where you won't lose it! For instance, if you drop your laptop down the
+hill [and one of the turkeys steals it!](https://www.youtube.com/watch?v=gR1nfWA-sEQ&feature=youtu.be)
 
-> ## Code in images
+> ## Code in Docker Containers/Images
 >
 > Be _very_ careful where you put your code while developing within
 > containers! Nothing in the image is saved when you exit, so make sure you
 > develop within the directories you've mounted on your laptop.
+>
+> **AGAIN! Be very careful and understand/appreciate this point, if you don't, then ask your instructor.**
+>
 {: .callout}
 
-I would recommend creating a subdirectory like `bootcamp`. Personally
+Start by creating a subdirectory like `bootcamp`. Personally
 I keep my ATLAS projects under a directory called `~/work` but you can
 adjust this as you see fit.
 
@@ -45,7 +50,8 @@ We'll do our work from here.
 
 Now let's create a git repository. We create this in a _subdirectory_
 of the working directory, because not everything we're working on will
-be versioned.
+be versioned.  Gitlab only saves the stuff that we put in
+this subdirectory.
 
 ~~~
 mkdir dan-example
@@ -72,6 +78,13 @@ intentions here: in general commiting nothing at all is a mistake.
 > chosen this name to make it clear that this should be _your_ example with
 > _your_ unique name. Later on we'll be looking at other peoples code so we
 > need everyone to have a unique repository name.
+>
+> This may seem like a silly point, but it will be important later
+> when you start to "fork" the repository of a friend.  This will try
+> to make a copy, with the same name, in your Gitlab space and so if there
+> are two repositories copied here with the same name, mayhem will ensue.
+>
+> You should try it to see for yourself what happens! **Bonus points for anyone who does and shows others.**
 >
 {: .callout}
 
@@ -105,7 +118,7 @@ If I code well, they will prase me.
 ~~~
 {: .language-markdown}
 
-and save the file. Let's ask git what is sees now:
+and save the file. [Hoo-rah](https://www.hopeforthewarriors.org/newsroom/oorah-v-hoora/)! Let's ask git what is sees now:
 
 ~~~
 git status
@@ -171,7 +184,7 @@ Changes to be committed:
 {: .callout}
 
 
-Great, now our reedme is ready to commit.
+Great, now our `README.md` is ready to commit.
 
 ~~~
 git commit -m "Add README file"
@@ -181,7 +194,7 @@ git commit -m "Add README file"
 In general git will force you to create a commit message. You should
 [try to write _good_ commit messages][good],
 since this helps everyone understand what you were doing. In this case
-it's pretty self-explanitory, but in many real world examples a commit
+it's pretty self-explanatory, but in many real-world examples a commit
 might just change one line deep inside your code. A commit message is
 a very good way to explain _why_ you decided to make this change.
 
