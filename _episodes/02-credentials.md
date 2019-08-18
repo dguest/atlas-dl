@@ -32,7 +32,7 @@ in.
 
 ## Authentication: Several Options
 
-There are a few ways to authenticate yourself, depending on the precise [communication protocol](https://www.howtogeek.com/181767/htg-explains-what-is-https-and-why-should-i-care/)
+There are a few ways to authenticate yourself, depending on the precise communication protocol
 that you want to use.  Each of these has benefits and drawbacks.
 
 ### Passwords (`https:`)
@@ -53,6 +53,12 @@ gitlab.
 - Accident prone: a "secret" that you type or paste a hundred times a
   day will inevitably be entered into the wrong place by accident
 - Insecure: passwords always end up being leaked _by other services_.
+
+Note that while the communication is [technically encrypted][https],
+the only way that gitlab can identify _you_ is through your password.
+It turns out that there are much smarter ways to do this.
+
+[https]: https://www.howtogeek.com/181767/htg-explains-what-is-https-and-why-should-i-care/
 
 ### Public Key Cryptography (`ssh`)
 
@@ -90,7 +96,13 @@ Kerberos offers the best, or worst, of both worlds:
 - It requires you to enter a password once for each session
 - For the rest of the session it should remember the password
 
-It requires some less-than-standard packages as well.
+It requires some less-than-standard packages as well. This is the
+default method at CERN[^1] but we won't use it here.
+
+[^1]: CERN's use of Kerberos is most obvious if you use the AFS file
+    system (you do if you have a home area on `lxplus`). Beyond AFS
+    few services require it. There _is_ an ongoing effort to phase out
+    AFS entirely but this is unlikely to happen before run LHC 4.
 
 ## Setting up `ssh`
 
@@ -162,8 +174,5 @@ a name that describes where it came from, i.e. "laptop ssh key".
 
 [gitlab-key]: https://gitlab.cern.ch/profile/keys
 
-
-
-
-
+#### Notes
 

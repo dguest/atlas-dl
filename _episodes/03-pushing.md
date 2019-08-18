@@ -36,21 +36,32 @@ fields are:
       allowed to see it.
     - Internal: **everyone with a CERN account** can see the
       project. This will _not_ hide anything from e.g. CMS.
-    - Public (**use this**): everyone with the URL can see the project. This is not always the option you should choose, but for our purposes it is what we want.
+    - Public (**use this**): everyone with the URL can see the
+      project. Unless someone holds a gun to your head _everything_
+      should be public.
 
    Note that there is no option here to make projects
-   "ATLAS-only". For anything that isn't _extermely_ sensitive
-   (i.e. you discovered a new particle and explicitly say this in your
-   project) public should be fine.  There are some ongoing discussions on how
-   to achieve this for more official repositories within ATLAS by using "cascading"
-   permissions based on egroup email lists.  One example of this is the [gitlab.cern.ch/atlas-phys](https://gitlab.cern.ch/atlas-phys) group
-   that is intended to house all analyses within ATLAS.  If you look in here, you will see that you are a "Reporter" for all projects, meaning
-   you can view them.  However, these are hidden from anyone else.  Gitlab knows this because everyone who is a part of the `atlas-current-physicists`
-   is automagically added here. More on permissions can be found [here](https://docs.gitlab.com/ee/user/permissions.html).
+   "ATLAS-only", which is fine: our code is all public anyway.[^1] More on
+   permissions can be found [on gitlab's docs][gitlabperm].
+
  - The "**Initialize repository with a README**" checkbox. Do **not**
    check this, we'll upload the readme from your local repository.
 
 The "project description" might be useful, but in general this should be explained in the README.
+
+[^1]: Note that while our _code_ is public by default, and you should
+    feel free to create public documentation in the
+    [twiki sandbox][sandbox] or by adding twikis to your gitlab
+    repositories. [Our _physics_ documentation][atlasphys] is internal
+    until approved. Within the physics repositories we use LDAP to
+    periodically synchronize the gitlab user list with
+    [e-groups][egroups]. The procedure is slow error-prone so we won't
+    discuss it here.
+
+[egroups]: https://groups.cern.ch/Pages/default.aspx
+[sandbox]: https://twiki.cern.ch/twiki/bin/view/Sandbox/
+[atlasphys]: https://gitlab.cern.ch/atlas-phys
+[gitlabperm]: https://docs.gitlab.com/ee/user/permissions.html
 
 Click the "Create Project" button on the bottom. You should be
 presented with a page that gives the name of the project and says "The
@@ -91,3 +102,5 @@ see your README now!
 
 [gitlab]: https://gitlab.cern.ch
 [new-project]: https://gitlab.cern.ch/projects/new
+
+#### Notes

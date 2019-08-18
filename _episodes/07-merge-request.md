@@ -126,3 +126,50 @@ This should bring up a "New Merge Request" dialog.
 When you are done, click "submit merge request".
 
 
+## Reviewing The Merge Request
+
+Now that you've both submitted a merge request, it's time to play
+reviewer. If you were tagged with a `@username` in the merge request
+you might have even received an email pointing to the request.
+
+Take a look at what your friend wants to change. We encourage you to
+explore the options for feedback that this interface offers: right now
+you're in the same room but when your collaborators are remote this is
+_much_ more convenient than sending an email.
+
+> ## Exercise: Use Fancy Gitlab Merge Request Features
+>
+> Gitlab offers quite a few features for merge requests. Try to do the
+> following:
+>  1. Review the "changes" by clicking "changes" tab in the middle of
+>     the page
+>  2. Make a comment on some line: if you put your mouse over a line
+>     on the left side of the changes list, you should be given the
+>     option to comment.
+>  3. Respond to your friend's comment. Note that you can also add
+>     more commits to your local branch and push them if your friend
+>     isn't happy with your proposed changes.
+>  4. Resolve the discussion. Note that merging your changes is
+>     impossible if conversations are unresolved.
+>  5. When you are happy with the change your friend proposes, go back
+>     to the "discussion" tab and make a comment to document
+>     this. Then click the "merge" button.
+
+Your gitlab remote repository should now be updated with your friend's
+addition. To get these changes into your `master` branch, you'll have
+to copy your local repository, and _then_ merge them. First copy them
+with `fetch`.
+
+~~~
+git fetch origin
+~~~
+{: .bash}
+
+Now merge
+
+~~~
+git merge origin/master
+~~~
+{: .bash}
+
+
