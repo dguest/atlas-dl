@@ -52,6 +52,13 @@ We'll do our work from here. That means we'll need:
   data/DAOD_EXOT27.17882744._000026.pool.root.1
   ~~~
 
+If you don't have this file locally, you need to download it:
+
+~~~
+wget https://cernbox.cern.ch/index.php/s/YXbCrQkwnZuc3yU/download
+~~~
+{: .bash}
+
 You can check your working directory with `tree .`. I get something like
 
 ~~~
