@@ -23,8 +23,10 @@ repository.
 
 ## Creating an empty repository on gitlab
 
-Go to [gitlab.cern.ch](gitlab.cern.ch) and click the little "plus" dropdown icon near the center
+Go to [gitlab.cern.ch][gitlab] and click the little "plus" dropdown icon near the center
 of the top bar, and select "New project".
+
+[gitlab]: gitlab.cern.ch
 
 This will bring you to a dialog page to create the project. The important
 fields are:
