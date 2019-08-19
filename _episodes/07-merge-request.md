@@ -154,7 +154,7 @@ _much_ more convenient than sending an email.
 >  5. When you are happy with the change your friend proposes, go back
 >     to the "discussion" tab and make a comment to document
 >     this. Then click the "merge" button.
-> {: .challenge}
+{: .challenge}
 
 Your gitlab remote repository should now be updated with your friend's
 addition. To get these changes into your `master` branch, you'll have
