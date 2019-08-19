@@ -20,7 +20,7 @@ hidden: false
 {: .prereq}
 
 There are a number of ways to share code with your collaborators and
-git. Earlier we learned that you can add your collaborators public
+git. You might have learned that you can add your collaborators public
 repositories as remotes and merge their changes directly into your
 code.
 

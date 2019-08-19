@@ -12,11 +12,12 @@ questions:
 > At a bare minimum:
 > - You should have git working on your laptop
 > - You should have docker working
+> - We assume that you already have a CERN account
 {: .prereq}
 
 
-We assume that you already have a CERN account.  To ensure that your
-gitlab account is active, go to [gitlab.cern.ch](gitlab.cern.ch).
+To ensure that your gitlab account is active, go to
+[gitlab.cern.ch](gitlab.cern.ch).
 
 You should find your very own gitlab homepage!
 

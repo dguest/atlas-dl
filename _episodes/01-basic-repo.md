@@ -1,7 +1,7 @@
 ---
 title: "Creating a local repositry"
 teaching: 10
-exercises: 15
+exercises: 10
 objectives:
 - "Remind you how to create a _very basic_ repository"
 - "Add your credentials to CERN's Gitlab"
