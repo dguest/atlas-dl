@@ -23,25 +23,3 @@ You should find your very own gitlab homepage!
 If you're having issues, **please notify your instructor immediately**
 since you won't be able to follow this lesson without access to CERN's
 Gitlab.
-
-## Set up your working directory structure
-
-We want to start everything in a _relatively_ clean directory, which has:
-- The pre-workshop material
-- The input data file in a path like
-  ~~~
-  data/DAOD_EXOT27.17882744._000026.pool.root.1
-  ~~~
-
-You can check your working directory with `tree .`. I get something like
-
-~~~
-.
-├── data
-│   └── DAOD_EXOT27.17882744._000026.pool.root.1
-└── pre-workshop
-    ├── AnalysisPayload.cxx
-    ├── CMakeLists.txt
-    └── README.md
-~~~
-{: .output}
