@@ -139,6 +139,7 @@ if (jet_selector.isJetGood(jet)) {
 ~~~
 {: .source}
 
-Now try to rebuild the package.
+Now try to rebuild the package. Once it finishes you should try
+running it.
 
 [jsh]: https://gitlab.cern.ch/usatlas-computing-bootcamp/JetSelectionHelper
