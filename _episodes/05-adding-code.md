@@ -85,12 +85,12 @@ commit ahead of master.
 ## Set up the ATLAS environment
 
 Remember that we created some keys in the `~/.ssh` directory a while
-back? We're going to need to use these to edit code while in the
+back? We're going to need to use these to push code updates to gitlab while in the
 docker container where we run ATLAS code.
 
 First copy the keys into the `Bootcamp` directory, make _sure_ you do
 this from the `Bootcamp` directory and **not** from the
-`bootcamp-example` code, which is going to be versioned. Also copy
+`bootcamp-example` code, which is going to be versioned (i.e. it would suck to accidentally push all the contents of your .ssh directory to gitlab). Also copy
 your git configuration file, so that your commits include your name
 and email.
 
@@ -104,7 +104,7 @@ Then we'll have to launch a docker image:
 
 ~~~
 docker run --rm -it -w /home/atlas/Bootcamp -v \
-    $PWD:/home/atlas/Bootcamp atlas/analysisbase:21.2.85-centos7 \
+    $PWD:/home/atlas/Bootcamp atlas/analysisbase:21.2.75 \
     bash -c 'cp -r ssh-credentials ~/.ssh; cp gitconfig ~/.gitconfig ; bash'
 ~~~
 {: .bash}
@@ -153,14 +153,15 @@ It's good practice to do a few things _before_ you push code to your public repo
 
 You want to do this so that if a colleague of yours clones your repository, they are not left with a frustrating situation
 of debugging your code that was checked in hastily after "just making that one small change" that actually broke
-things and caused a segfault later on.  Don't be "that colleague".  If you're not already in an `AnalysisBase` image, move into the
-directory that _contains_ `dan-example` and run
+things and caused a segfault later on.  Don't be "that colleague".
+<!-- If you're not already in an `AnalysisBase` image, move into the -->
+<!-- directory that _contains_ `dan-example` and run -->
+Next `cd` to `/home/atlas/Bootcamp`. You should see `dan-example`
+here.
 
 [^2]: Running these tests for every commit can get tedious, later this
     week we'll learn to do this in an automated way which will help prevent you from being "that colleague".
 
-next `cd` to `/home/atlas/Bootcamp`. You should see `dan-example`
-here.
 
 As we learned in the pre-workshop material, you should build code from a
 directory which is _on the same level_ as your code repository. Create the build directory and build your code.
@@ -168,6 +169,7 @@ directory which is _on the same level_ as your code repository. Create the build
 ~~~
 mkdir build
 cd build
+source ~/release_setup.sh
 cmake ../dan-example
 make
 ~~~
