@@ -42,8 +42,8 @@ be essential skills to anyone working in ATLAS.
 >
 > 1.  The basic setup for CERN Gitlab
 > 2.  Creating a new repository for your AnalysisPayload from the [pre-workshop material](https://adjackp.github.io/pre-workshopMaterial/)
-> 3.  Forking an existing repository so you can use it "like its your own"
-> 4.  Adding and working with multiple "remote" forks from your local repository
+> 3.  Adding credentials
+> 4.  Forking an existing repository so you can use it "like its your own"
 > 5.  Creating merge requests to modify code in a way to ensure that it gets reviewed
 > 6.  Including code from other repositories with yours through the use of submodules
 {: .checklist}
