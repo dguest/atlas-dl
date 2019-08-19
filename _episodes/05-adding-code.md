@@ -153,14 +153,15 @@ It's good practice to do a few things _before_ you push code to your public repo
 
 You want to do this so that if a colleague of yours clones your repository, they are not left with a frustrating situation
 of debugging your code that was checked in hastily after "just making that one small change" that actually broke
-things and caused a segfault later on.  Don't be "that colleague".  If you're not already in an `AnalysisBase` image, move into the
-directory that _contains_ `dan-example` and run
+things and caused a segfault later on.  Don't be "that colleague".
+<!-- If you're not already in an `AnalysisBase` image, move into the -->
+<!-- directory that _contains_ `dan-example` and run -->
+Next `cd` to `/home/atlas/Bootcamp`. You should see `dan-example`
+here.
 
 [^2]: Running these tests for every commit can get tedious, later this
     week we'll learn to do this in an automated way which will help prevent you from being "that colleague".
 
-next `cd` to `/home/atlas/Bootcamp`. You should see `dan-example`
-here.
 
 As we learned in the pre-workshop material, you should build code from a
 directory which is _on the same level_ as your code repository. Create the build directory and build your code.
