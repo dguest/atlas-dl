@@ -19,7 +19,7 @@ hidden: false
 In this episode we hope to demonstrate that "publishing" anything via
 CERN gitlab is extremely easy.
 
-## Initalizing a repository
+## Create a base directory
 
 We'll be working with this repository for the remainder of this
 workshop, so before doing anything let's make sure you're putting your
@@ -45,7 +45,27 @@ cd ~/work/bootcamp
 ~~~
 {: .source}
 
-We'll do our work from here.
+We'll do our work from here. That means we'll need:
+- The pre-workshop material
+- The input data file in a path like
+  ~~~
+  data/DAOD_EXOT27.17882744._000026.pool.root.1
+  ~~~
+
+You can check your working directory with `tree .`. I get something like
+
+~~~
+.
+├── data
+│   └── DAOD_EXOT27.17882744._000026.pool.root.1
+└── pre-workshop
+    ├── AnalysisPayload.cxx
+    ├── CMakeLists.txt
+    └── README.md
+~~~
+{: .output}
+
+## Initializing the repository
 
 Now let's create a git repository. We create this in a _subdirectory_
 of the working directory, because not everything we're working on will
