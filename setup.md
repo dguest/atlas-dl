@@ -5,16 +5,15 @@ questions:
 
 ---
 
-Where everything lives
-----------------------
+## Where everything lives
 
 The code for this is stored in gitlab, under
 [`deep-sets-example`][dse].
 
 [dse]: https://gitlab.cern.ch/deep-sets-example
 
-Getting the image you need
---------------------------
+
+## Getting the image you need
 
 I've created a less annoying docker image, but we still require some
 local directories to be mounted. Clone
@@ -27,8 +26,7 @@ want to use both inside and outside the image should go in the
 [launcher]: https://gitlab.cern.ch/deep-sets-example/analysisbase-docker
 
 
-Getting the files you need
---------------------------
+## Getting the files you need
 
 Unfortunately I couldn't figure out how to do something interesting
 with the example file we had, so you'll have to download the one

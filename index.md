@@ -17,6 +17,11 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 Introduction
 ------------
 
-No time, let's go!
+This is very much based on [mlbnn][mlbnn], which also works through
+the process of integrating this into ATLAS workflows.
+
+Not sure I'll have time to get to that though...
+
+[mlbnn]: https://github.com/dguest/mlbnn
 
 {% include links.md %}
