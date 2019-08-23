@@ -15,3 +15,13 @@ For example:
      + You could use pt ratios rather than raw pt, i.e. subjet pt /
        large jet pt, or (for the target) truth pt / reconstructed pt
      + You can use functions like log or just linear scaling
+
+
+And then, there are many things we did _wrong_!
+
+ - You should use a training, validation, and testing set, but for
+   that we'd need a bit more time and data.
+ - You never implemented this in a real analysis! Booo. There's more
+ information in [mlbnn][mlbnn]
+
+[mlbnn]: https://github.com/dguest/mlbnn
