@@ -25,6 +25,18 @@ want to use both inside and outside the image should go in the
 
 [launcher]: https://gitlab.cern.ch/deep-sets-example/analysisbase-docker
 
+### Python training image
+
+For most of what we're doing I'd recommend using pip and working on
+your local machine, but if you have issues setting that up you can
+also use the Atlas Machine Learning Forum's images. You can get a good
+starting point by running:
+
+~~~
+docker pull atlasml/ml-base:py-3.7.2
+~~~
+{: .bash}
+
 
 ## Getting the files you need
 

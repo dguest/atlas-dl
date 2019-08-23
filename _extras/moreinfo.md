@@ -22,6 +22,6 @@ And then, there are many things we did _wrong_!
  - You should use a training, validation, and testing set, but for
    that we'd need a bit more time and data.
  - You never implemented this in a real analysis! Booo. There's more
- information in [mlbnn][mlbnn]
+   information in [mlbnn][mlbnn]
 
 [mlbnn]: https://github.com/dguest/mlbnn

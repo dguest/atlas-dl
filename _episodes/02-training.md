@@ -12,6 +12,23 @@ keypoints:
 hidden: false
 ---
 
+> ## Setting up your environment
+>
+> I like to run these simple tests on my laptop naively, but if for
+> whatever reason you can't do that, you can run all this within an
+> image.
+>
+> We'd recommend you run
+>
+> ~~~
+> docker pull atlasml/ml-base:py-3.7.2
+> ~~~
+> {: .bash}
+>
+> to get an image to start with
+{: .prereq}
+
+
 ## What are we trying to do?
 
 The idea here is to regress on the true higgs pt based on some
@@ -20,9 +37,21 @@ sense is something to talk about with physicists, but we just want to demonstrat
 
 ## Get the training / plotting repo
 
-The repository is called [`higgs-regression-training`][hrt]. Clone it.
+The repository is called [`higgs-regression-training`][hrt]. Clone it
+in the `/work` directory.
 
 [hrt]: https://gitlab.cern.ch/deep-sets-example/higgs-regression-training
+
+> ## Launching into another image
+>
+> If you need a docker image to run python 3, Keras, etc, you can get it
+> by going to the `work` directory and running.
+>
+> ~~~
+> docker run --rm -it -v ${PWD}:/home/atlas/data atlasml/ml-base:py-3.7.2
+> ~~~
+> {: .bash}
+{: .callout}
 
 ### Making a plot
 

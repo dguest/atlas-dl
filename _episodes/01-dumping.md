@@ -18,6 +18,10 @@ The script in the `analysisbase-launcher` expects that your key is in
 `~/.ssh/id_rsa`. If you don't want to use this you can run
 `make-key.sh` and copy the output into your gitlab SSH keys.
 
+### Set up your working directory
+
+You'll need to make your input data available within the image. Copy
+it into the `work/data` directory.
 
 ## Building the dumper
 
