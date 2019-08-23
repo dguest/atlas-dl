@@ -76,7 +76,6 @@ model/
 ├── model.png
 └── weights.h5
 ~~~
-
 {: .output}
 
 There are a few files:
