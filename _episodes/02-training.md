@@ -14,7 +14,7 @@ hidden: false
 
 > ## Setting up your environment
 >
-> I like to run these simple tests on my laptop naively, but if for
+> I like to run these simple tests on my laptop natively, but if for
 > whatever reason you can't do that, you can run all this within an
 > image.
 >
